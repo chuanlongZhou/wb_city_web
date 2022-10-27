@@ -1,4 +1,3 @@
-import folium
 import geopandas
 import shapely
 
@@ -18,7 +17,7 @@ def create_map(state,  city):
         name="Emission",
         column="emission_residential",
         cmap="hot",
-        tooltip=["residential"],
+        tooltip=["residential", "emission_population"],
         popup=True,
         # opacity=0.3,
         style_kwds={
@@ -29,20 +28,20 @@ def create_map(state,  city):
         }
     )
 
-    df[city].explore(
-        m=m,
-        name="Population",
-        column="emission_population",
-        cmap="hot",
-        tooltip=["emission_population"],
-        popup=True,
-        style_kwds={
-            "stroke": True,
-            "weight": 1,
-            "opacity": 0.1,
-            "fillOpacity": 0.4
-        }
-    )
+    # df[city].explore(
+    #     m=m,
+    #     name="Population",
+    #     column="emission_population",
+    #     cmap="hot",
+    #     tooltip=["emission_population"],
+    #     popup=True,
+    #     style_kwds={
+    #         "stroke": True,
+    #         "weight": 1,
+    #         "opacity": 0.1,
+    #         "fillOpacity": 0.4
+    #     }
+    # )
 
     fua.explore(m=m,
                 name="Functional Urban Area",
@@ -53,6 +52,6 @@ def create_map(state,  city):
                 }
                 )
 
-    folium.LayerControl().add_to(m)  # use folium to add layer control
+    # folium.LayerControl().add_to(m)  # use folium to add layer control
     
     return m
