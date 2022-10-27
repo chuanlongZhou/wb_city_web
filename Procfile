@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Carbon_Mointor_City_2.0.py
+web: sh setup.sh && streamlit run Carbon_Monitor_City_2.0.py
