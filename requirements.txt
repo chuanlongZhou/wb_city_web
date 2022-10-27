@@ -1,2 +1,5 @@
 geopandas
 streamlit_folium
+folium
+matplotlib
+mapclassify
